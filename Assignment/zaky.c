@@ -1,34 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <conio.h>
-#include<math.h>
-#include<string.h>
-#include<time.h>
-#define push_first_array
-#define push_into_middle
-#define insert_student_last
-#define  print_array
-int j=0;//global variable to counts the stundets
-struct student_info { //defining structure for the students data
-    char name_first[20];//a char has a size of 1 byte so an array of 20 char has a size of 20 bytes
-    char name_last[20];//also has a size of 20 bytes
-    int id;//integer has a size of 4 bytes
-    struct birthdate {
-        int day;
-        int month;
-        int year;
-
-    }birth_date;//has a size of 12 bytes
-    int last_year_score;//has a size of 4 bytes
-};//so the structure has a total size of 60 bytes
-struct node {//defining the node of the linked list
-    struct student_info data;//has a size of 60 bytes
-    struct node* next;//size of a pointer is dependant on the address bus of the cpu ,in our case the pointer has a size of 12 bytes
-};//one node has a total size of 72 bytes
-/*we need to calculate the time complexity of every function asked so we will use our mode machine in which
- * arithmetic and logic operation and assignments takes 1 unit time. ignoring the calculation of printf and scanf
- * because they are the same in both linked list and array so no need for them in comparison.
- */
 void append(struct student_info** head_ref){                        //this function adds data in the end of the list
     system("cls");
     j++;//its cost is 2T for incrementation and assignment 
@@ -235,12 +204,3 @@ void calling(){                                        //this function used to p
     clean(&head);
      return ;
 }
-
-int main()
-{
-    printf("\n welcome to our program, here u can save your students data  \n ");
-    calling();
-    return 0;
-}
-
-
